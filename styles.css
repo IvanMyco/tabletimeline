@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #636363;
+    color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: lightgreen; /* Verde chiaro quando si seleziona la riga */
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+.image-container {
+    position: fixed; /* Permette alle immagini di apparire sopra tutti gli altri contenuti */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+img.random-image {
+    position: absolute;
+    z-index: 1001;
+    display: block; /* Immagini visibili */
+    height: auto;
+}
+
+
+a {
+    color: black; /* Colore del testo nero */
+    text-decoration: none;/*text-decoration: underline;  Sottolinea i link */
+}
+
+a:visited {
+    color: black; /* Anche i link visitati rimangono neri */
+	text-decoration: none;
+}
+
+a:hover {
+    color: #034a0a; /* I link rimangono neri anche al passaggio del mouse */
+    text-decoration: underline; /* Mantieni la sottolineatura al passaggio del mouse */
+	font-weight: bold;
+}
+
+a:active {
+    color: black; /* I link rimangono neri anche quando attivi */
+}
+
+img.random-image {
+    position: absolute;
+    z-index: 1001;
+    display: block;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Solo dissolvenza, nessuna transizione di posizione */
+}
+
+
+
+
+.glitch {
+    position: relative;
+    animation: glitch-animation 0.2s steps(2, end) infinite;
+    filter: contrast(250%) hue-rotate(10deg);
+    opacity: 0.9;
+}
+
+.glitch:before,
+.glitch:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0.6;
+    z-index: -1; /* Si posizionano dietro l'immagine principale */
+}
+
+.glitch:before {
+    left: 2%;
+    filter: blur(2px) contrast(200%) hue-rotate(270deg); /* Simula il canale blu */
+}
+
+.glitch:after {
+    left: -2%;
+    filter: blur(2px) contrast(200%) hue-rotate(90deg); /* Simula il canale rosso */
+}
+
+@keyframes glitch-animation {
+    0% {
+        clip: rect(5% , 100%, 15%, 0);
+        transform: translate(-2%, -1%) skew(0.5deg, 0.5deg);
+    }
+    10% {
+        clip: rect(10%, 100%, 30%, 0);
+        transform: translate(1%, -0.5%) skew(-0.3deg, -0.5deg);
+    }
+    20% {
+        clip: rect(15%, 100%, 25%, 0);
+        transform: translate(-1%, 1.5%) skew(0.2deg, 0.2deg);
+    }
+    30% {
+        clip: rect(8%, 100%, 20%, 0);
+        transform: translate(0%, 0%) skew(0.3deg, 0.3deg);
+    }
+    40% {
+        clip: rect(12%, 100%, 18%, 0);
+        transform: translate(2%, -1%) skew(-0.3deg, -0.5deg);
+    }
+    50% {
+        clip: rect(25%, 100%, 45%, 0);
+        transform: translate(-2%, 1%) skew(0.5deg, 0.5deg);
+    }
+    60% {
+        clip: rect(20%, 100%, 35%, 0);
+        transform: translate(1%, 0.5%) skew(-0.3deg, -0.2deg);
+    }
+    70% {
+        clip: rect(15%, 100%, 30%, 0);
+        transform: translate(-1%, -1.5%) skew(0.2deg, 0.1deg);
+    }
+    80% {
+        clip: rect(12%, 100%, 28%, 0);
+        transform: translate(1%, -0.5%) skew(-0.5deg, -0.5deg);
+    }
+    90% {
+        clip: rect(10%, 100%, 25%, 0);
+        transform: translate(0%, 0%) skew(0deg, 0deg);
+    }
+    100% {
+        clip: rect(8%, 100%, 20%, 0);
+        transform: translate(-2%, -1%) skew(0.1deg, 0.1deg);
+    }
+}
+

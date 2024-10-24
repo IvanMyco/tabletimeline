@@ -30,6 +30,10 @@ th, td {
     text-align: center;
 }
 
+thead tr:hover {
+    background-color: transparent; /* Disabilita l'effetto hover sulla riga dell'intestazione */
+}
+
 tr:hover {
     background-color: lightgreen; /* Verde chiaro quando si seleziona la riga */
 }
